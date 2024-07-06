@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000">
+    <include layout="@layout/toolbar_layout"/>
+
+    <ToggleButton
+        android:id="@+id/flashlightButton"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/toggle_press"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="180dp"
+        android:textOff=""
+        android:textOn=""
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="106dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="470dp"
+        android:src="@drawable/timg" />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="600dp"
+       >
+       <ImageButton
+           android:id="@+id/camera_button"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:src="@drawable/camera"
+           android:layout_marginLeft="65dp"
+           />
+
+       <ImageButton
+           android:id="@+id/sos_button1"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:src="@drawable/img"
+           android:layout_marginLeft="50dp"
+           />
+       <ImageButton
+           android:id="@+id/setting_button"
+           android:layout_width="55dp"
+           android:layout_height="55dp"
+           android:layout_marginTop="3dp"
+           android:src="@drawable/sett"
+           android:layout_marginLeft="50dp"/>
+
+   </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:background="@color/black"
+    tools:context=".SettingActivity">
+
+    <include layout="@layout/toolbar_layout1"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/speed"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="78dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash Speed"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="33dp"/>
+
+    <TextView
+        android:id="@+id/speedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="150ms"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="300dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="1"
+        android:progress="5"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        style="@style/SeekBarStyle"
+        android:thumb="@drawable/custom_thumb"/>
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="338dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/rounded_toggle_button"
+        android:textOff="TEST"
+        android:textOn="TEST"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+</RelativeLayout>
