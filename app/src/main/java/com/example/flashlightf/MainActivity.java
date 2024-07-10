@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     // device sensor manager
     private SensorManager mSensorManager;
     TextView tvHeading;
+    ImageButton menu;
     ImageButton sosButton;
 
     @Override
@@ -74,22 +75,20 @@ public class MainActivity extends AppCompatActivity {
         sosButton = findViewById(sos_button1);
         Button flashlightButton = findViewById(R.id.flashlightButton);
         imageOF = findViewById(R.id.imageView);
-        ImageButton click = findViewById(R.id.camera_button);
         imageSetting = findViewById(R.id.setting_button);
         cameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
+        menu = findViewById(R.id.menu);
 
-
+        menu.setOnClickListener(v ->{
+            Intent i = new Intent(this, AboutActivity.class);
+            startActivity(i);
+        });
 
         try {
             cameraId = cameraManager.getCameraIdList()[0];
         } catch (CameraAccessException e) {
             e.printStackTrace();
         }
-        click.setOnClickListener(v->{
-            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(cameraIntent,CAMERA_REQUEST);
-        });
-
 
         flashlightButton.setOnClickListener(v -> toggleFlashlight());
 

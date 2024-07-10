@@ -31,10 +31,7 @@
             android:name=".SettingActivity"
             android:exported="true" />
         <activity
-            android:name=".ToolBarActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ToolBarActivity1"
+            android:name=".AboutActivity"
             android:exported="true" />
     </application>
 

@@ -1,10 +1,13 @@
 package com.example.flashlightf;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +24,9 @@ public class SettingActivity extends AppCompatActivity {
     private volatile boolean isFlashOn = false;
     private int flashSpeed = 0; // minimum speed
     private Thread blinkThread;
+    ImageButton back_image;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +35,17 @@ public class SettingActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
         toggleButton = findViewById(R.id.toggleButton);
         speedTextView = findViewById(R.id.speedTextView);
+        back_image = findViewById(R.id.arrow);
 
         cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
         seekBar.setMax(14); // 0 to 14, so 15 steps
         seekBar.setProgress(0); // initial progress
 
+        back_image.setOnClickListener(v ->{
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+        });
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

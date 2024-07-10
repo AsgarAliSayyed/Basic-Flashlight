@@ -7,7 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#000000">
-    <include layout="@layout/toolbar_layout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flashlight"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="150dp"/>
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/menu_bar"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="375dp"
+
+        />
 
     <ToggleButton
         android:id="@+id/flashlightButton"
@@ -36,20 +54,13 @@
        android:layout_height="wrap_content"
        android:layout_marginTop="600dp"
        >
-       <ImageButton
-           android:id="@+id/camera_button"
-           android:layout_width="60dp"
-           android:layout_height="60dp"
-           android:src="@drawable/camera"
-           android:layout_marginLeft="65dp"
-           />
 
        <ImageButton
            android:id="@+id/sos_button1"
            android:layout_width="60dp"
            android:layout_height="60dp"
            android:src="@drawable/img"
-           android:layout_marginLeft="50dp"
+           android:layout_marginLeft="70dp"
            />
        <ImageButton
            android:id="@+id/setting_button"
@@ -57,7 +68,7 @@
            android:layout_height="55dp"
            android:layout_marginTop="3dp"
            android:src="@drawable/sett"
-           android:layout_marginLeft="50dp"/>
+           android:layout_marginLeft="150dp"/>
 
    </LinearLayout>
 

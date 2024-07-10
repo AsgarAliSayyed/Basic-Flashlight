@@ -8,7 +8,13 @@
     android:background="@color/black"
     tools:context=".SettingActivity">
 
-    <include layout="@layout/toolbar_layout1"/>
+    <ImageButton
+        android:id="@+id/arrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/arrow"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="7dp" />
 
     <ImageView
         android:id="@+id/image"

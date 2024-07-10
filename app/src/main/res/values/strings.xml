@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FlashLightF</string>
+    <string name="group_no">
+        Group No.9
+        Group Members:
+        Asgar Ali Sayyed
+        Sarthak Gaikwad
+        Lukesh Ingale
+    </string>
 </resources>
