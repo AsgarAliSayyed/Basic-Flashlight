@@ -12,9 +12,6 @@ import android.widget.SeekBar;
 import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.ToggleButton;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingActivity extends AppCompatActivity {
     private SeekBar seekBar;

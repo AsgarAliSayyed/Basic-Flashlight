@@ -1,47 +1,17 @@
 package com.example.flashlightf;
 
-import static android.content.Context.CAMERA_SERVICE;
-import static androidx.core.content.ContextCompat.getSystemService;
 
 import static com.example.flashlightf.R.id.sos_button1;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.hardware.Camera;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraManager;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.provider.MediaStore;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,21 +21,11 @@ public class MainActivity extends AppCompatActivity {
     boolean isFlashlightOn = false;
     CameraManager cameraManager;
     String cameraId;
-    TextView flashlightStatus;
-    ImageView image;
     Camera camera;
     ImageButton imageSetting;
     ImageView imageOF;
-    private static final int CAMERA_REQUEST =1888;
-    private boolean isFlashOn = false;
     private boolean isSOSRunning = false;
-    // record the compass picture angle turned
-    private float currentDegree = 0f;
 
-    // device sensor manager
-    private SensorManager mSensorManager;
-    TextView tvHeading;
-    ImageButton menu;
     ImageButton sosButton;
 
     @Override
@@ -77,12 +37,7 @@ public class MainActivity extends AppCompatActivity {
         imageOF = findViewById(R.id.imageView);
         imageSetting = findViewById(R.id.setting_button);
         cameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
-        menu = findViewById(R.id.menu);
 
-        menu.setOnClickListener(v ->{
-            Intent i = new Intent(this, AboutActivity.class);
-            startActivity(i);
-        });
 
         try {
             cameraId = cameraManager.getCameraIdList()[0];
