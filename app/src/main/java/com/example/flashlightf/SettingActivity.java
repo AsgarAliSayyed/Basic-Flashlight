@@ -16,10 +16,10 @@ import android.widget.TextView;
 public class SettingActivity extends AppCompatActivity {
     SeekBar seekBar;
     ToggleButton toggleButton;
-    TextView speedTextView; // Add a TextView to display the speed
+    TextView speedTextView;
     CameraManager cameraManager;
     volatile boolean isFlashOn = false;
-    int flashSpeed = 0; // minimum speed
+    int flashSpeed = 0;
     Thread blinkThread;
     ImageButton back_image;
 
@@ -36,8 +36,8 @@ public class SettingActivity extends AppCompatActivity {
 
         cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
-        seekBar.setMax(14); // 0 to 14, so 15 steps
-        seekBar.setProgress(0); // initial progress
+        seekBar.setMax(14);
+        seekBar.setProgress(0);
 
         back_image.setOnClickListener(v ->{
             Intent i = new Intent(this, MainActivity.class);
@@ -47,9 +47,7 @@ public class SettingActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // Change the speed of SOS flash light based on the seekbar progress
                 flashSpeed = progress;
-                // Update the speed text view to display the speed in milliseconds
                 int speedInMs = 50 + (flashSpeed * 100); // 50ms to 1500ms
                 speedTextView.setText(speedInMs + "ms");
             }
@@ -100,13 +98,10 @@ public class SettingActivity extends AppCompatActivity {
         String sosCode = "......";
         for (char c : sosCode.toCharArray()) {
             if (c == '.') {
-                // Flash on for 100ms
                 flashOn(100);
             } else if (c == '-') {
-                // Flash on for 300ms
                 flashOn(300);
             }
-            // Pause between flashes
             try {
                 int pauseDuration = 50 + (flashSpeed * 100); // 50ms to 1500ms
                 Thread.sleep(pauseDuration);

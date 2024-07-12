@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,11 +72,13 @@ public void toggleFlashlight() {
             cameraManager.setTorchMode(cameraId, false);
             isFlashlightOn = false;
             imageOF.setImageResource(R.drawable.timg);
+            Toast.makeText(this, "Flashlight is OFF", Toast.LENGTH_SHORT).show();
 
         } else {
             cameraManager.setTorchMode(cameraId, true);
             isFlashlightOn = true;
             imageOF.setImageResource(R.drawable.timg_1);
+            Toast.makeText(this, "Flashlight is ON", Toast.LENGTH_SHORT).show();
         }
     } catch (CameraAccessException e) {
         e.printStackTrace();
@@ -88,13 +92,11 @@ public void toggleFlashlight() {
                     try {
                         // Turn on the flash
                         cameraManager.setTorchMode(cameraId, true);
-                        Thread.sleep(10); // 50ms on
+                        Thread.sleep(50);
 
-                        // Turn off the flash
                         cameraManager.setTorchMode(cameraId, false);
-                        Thread.sleep(10); // 50ms off
+                        Thread.sleep(50);
                     } catch (CameraAccessException | InterruptedException e) {
-                        // Handle the exception
                     }
                 }
             }
