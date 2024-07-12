@@ -3,11 +3,9 @@ package com.example.flashlightf;
 
 import static com.example.flashlightf.R.id.sos_button1;
 import android.content.Intent;
-import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -21,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     boolean isFlashlightOn = false;
     CameraManager cameraManager;
     String cameraId;
-    Camera camera;
     ImageButton imageSetting;
     ImageView imageOF;
     private boolean isSOSRunning = false;
@@ -83,24 +80,6 @@ public void toggleFlashlight() {
         e.printStackTrace();
     }
 }
-    private boolean safeCameraOpen(int id) {
-        boolean qOpened = false;
-
-        try {
-            releaseCameraAndPreview();
-            camera = Camera.open(id);
-            qOpened = (camera != null);
-        } catch (Exception e) {
-            Log.e(getString(R.string.app_name), "failed to open Camera");
-            e.printStackTrace();
-        }
-
-        return qOpened;
-    }
-
-    private void releaseCameraAndPreview() {
-        // Release the camera and preview
-    }
     private void blinkFlash() {
         new Thread(new Runnable() {
             @Override
@@ -109,11 +88,11 @@ public void toggleFlashlight() {
                     try {
                         // Turn on the flash
                         cameraManager.setTorchMode(cameraId, true);
-                        Thread.sleep(50); // 50ms on
+                        Thread.sleep(10); // 50ms on
 
                         // Turn off the flash
                         cameraManager.setTorchMode(cameraId, false);
-                        Thread.sleep(50); // 50ms off
+                        Thread.sleep(10); // 50ms off
                     } catch (CameraAccessException | InterruptedException e) {
                         // Handle the exception
                     }

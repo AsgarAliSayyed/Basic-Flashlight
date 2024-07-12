@@ -14,13 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class SettingActivity extends AppCompatActivity {
-    private SeekBar seekBar;
-    private ToggleButton toggleButton;
-    private TextView speedTextView; // Add a TextView to display the speed
-    private CameraManager cameraManager;
-    private volatile boolean isFlashOn = false;
-    private int flashSpeed = 0; // minimum speed
-    private Thread blinkThread;
+    SeekBar seekBar;
+    ToggleButton toggleButton;
+    TextView speedTextView; // Add a TextView to display the speed
+    CameraManager cameraManager;
+    volatile boolean isFlashOn = false;
+    int flashSpeed = 0; // minimum speed
+    Thread blinkThread;
     ImageButton back_image;
 
     @SuppressLint("MissingInflatedId")
@@ -43,6 +43,7 @@ public class SettingActivity extends AppCompatActivity {
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         });
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

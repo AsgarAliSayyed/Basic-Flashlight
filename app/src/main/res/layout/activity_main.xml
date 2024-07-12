@@ -17,7 +17,6 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="150dp"/>
 
-
     <ToggleButton
         android:id="@+id/flashlightButton"
         android:layout_width="250dp"
@@ -53,6 +52,7 @@
            android:src="@drawable/img"
            android:layout_marginLeft="70dp"
            />
+
        <ImageButton
            android:id="@+id/setting_button"
            android:layout_width="55dp"
