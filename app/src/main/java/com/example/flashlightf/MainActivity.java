@@ -14,9 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-
-    // define the display assembly compass picture
+public class
+MainActivity extends AppCompatActivity {
 
     boolean isFlashlightOn = false;
     CameraManager cameraManager;
@@ -56,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!isSOSRunning) {
                     isSOSRunning = true;
+                    Toast.makeText(MainActivity.this, "SOS is ON", Toast.LENGTH_SHORT).show();
                     blinkFlash();
                 } else {
                     isSOSRunning = false;
+                    Toast.makeText(MainActivity.this, "SOS is OFF", Toast.LENGTH_SHORT).show();
                     stopFlash();
                 }
             }

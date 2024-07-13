@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
@@ -65,9 +66,11 @@ public class SettingActivity extends AppCompatActivity {
                 if (toggleButton.isChecked()) {
                     // Start flashing SOS
                     startSOSFlash();
+                    Toast.makeText(SettingActivity.this, "SOS is ON", Toast.LENGTH_SHORT).show();
                 } else {
                     // Stop flashing SOS
                     stopSOSFlash();
+                    Toast.makeText(SettingActivity.this, "SOS is OFF", Toast.LENGTH_SHORT).show();
                 }
             }
         });
